@@ -1,4 +1,4 @@
-# Battle of the Cutest Game
+# Game: Battle of the Cutest
 
 As per the assignment, data (in the form of images) was retrieved from the API endpoint at thecatapi.com. A Flask server was then used to display an HTML & CSS webpage containing the game with Python used for the backend.
 
