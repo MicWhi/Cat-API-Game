@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Michael W">
+  <meta name="description" content="Display of info obtained from cat API">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cat API</title>
+
+  <style>
+
+    h1 {
+    color: #667292;
+    margin-left: 40px
+    }
+
+    body {
+    background-color: #b7d7e8;
+    font-family: Andale Mono,AndaleMono,monospace;
+    }
+
+    .table_centre {
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    .div_centre {
+    vertical-align: middle;
+    text-align: center;
+    }
+
+  </style>
+</head>
+
+
+<body>
+  <h1 align="center">Battle of the Cutest</h1>
+  <hr>
+  <table class="table_centre">
+    <tr align="center">
+    <td><img src= {{ image1 }} height="250" width="250"></td>
+    <td> VS </td>
+    <td><img src= {{ image2 }} height="250" width="250"></td>
+    </tr>
+
+    <tr align="center">
+      <td>
+        <form action="" method="post">
+          <input type="submit" name="submitted_button" value="Cutie Pie">
+      </form>
+      </td>
+         <td> </td>
+      <td>
+        <form action="" method="post">
+        <input type="submit" name="submitted_button" value="Challenger">
+      </form>
+      </td>
+  </table>
+<br>
+  <div class="div_centre"> Cutie Pie Wins: {{ win_count }} </div>
+</body>
