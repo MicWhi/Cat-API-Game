@@ -1,8 +1,8 @@
 # Battle of the Cutest Game
 
-As per the assignment, data (in the form of images) was retrieved from the API endpoint at thecatapi.com.
+As per the assignment, data (in the form of images) was retrieved from the API endpoint at thecatapi.com. A Flask server was then used to display an HTML & CSS webpage containing the game with Python used for the backend.
 
-The user is then displayed 2 images and must decide which image is cuter.
+On the page, the user is shown 2 images and must decide which image is cuter.
 
 The "Cutie Pie" is the image displayed on the left, which is the reigning cutest.
 
@@ -12,8 +12,8 @@ The Cutie Pie win counter starts at 0 for a new game and increases by 1 for each
 
 The counter is set to 1 when the "Challenger" button is clicked.
 
-<img src="image/Screenshot.PNG" />
+<img src="Screenshot.PNG" />
 
 ## File Organisation
 
-All code can be found in the 'src' directory, while the csv files used for storage of images and win counter are located in the 'data storage' directory.
+All code can be found in the 'src' directory, while the csv files used for storage of image URLs and the win counter are located in the 'data storage' directory.
