@@ -7,9 +7,9 @@ app = Flask(__name__)
 @app.context_processor
 def inject_data():
     """Enables the data stored in the csv files to be read and used in the HTML page."""
-    data = {'image1': read_csv_data("cutest_cat.csv"),
-            'image2': read_csv_data("challenger.csv"),
-            'win_count': read_csv_data("win_count.csv")}
+    data = {'image1': read_csv_data("data storage/cutest_cat.csv"),
+            'image2': read_csv_data("data storage/challenger.csv"),
+            'win_count': read_csv_data("data storage/win_count.csv")}
 
     return data
 
@@ -22,13 +22,13 @@ def home():
     if request.method == 'POST':
 
         if request.form['submitted_button'] == "Cutie Pie":
-            store_new_image_url('challenger.csv')
+            store_new_image_url('data storage/challenger.csv')
             increase_win_counter()
 
         elif request.form['submitted_button'] == "Challenger":
             transfer_challenger_to_cutest()
-            store_new_image_url('challenger.csv')
-            set_win_counter(1) # set to 1 after as the challenger gains first win by becoming "Cutie Pie"
+            store_new_image_url('data storage/challenger.csv')
+            set_win_counter(1)  # set to 1 after as the challenger gains first win by becoming "Cutie Pie"
 
         return render_template("battle_cats.html")
 

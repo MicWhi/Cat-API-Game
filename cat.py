@@ -36,7 +36,7 @@ def store_new_image_url(csv_file_name):
         writer = csv.writer(file)
         writer.writerow([get_image_url(retrieve_api_json())])
 
-    if read_csv_data('challenger.csv') == read_csv_data('cutest_cat.csv'):
+    if read_csv_data('data storage/challenger.csv') == read_csv_data('data storage/cutest_cat.csv'):
 
         store_new_image_url(csv_file_name)
 
@@ -54,9 +54,9 @@ def transfer_challenger_to_cutest():
     """Moves the url stored in the challenger csv to the cutest_cat csv. This is used when user clicks challenger cat
     button to indicate they think this cat is cuter."""
 
-    challenger_url = read_csv_data('challenger.csv')
+    challenger_url = read_csv_data('data storage/challenger.csv')
 
-    with open('cutest_cat.csv', 'w') as file:
+    with open('data storage/cutest_cat.csv', 'w') as file:
         writer = csv.writer(file)
         writer.writerow([challenger_url])
 
@@ -64,25 +64,25 @@ def transfer_challenger_to_cutest():
 def increase_win_counter():
     """Retrieves the current win count from the csv, increase the value by 1 and overwrites the old value with this
     new one."""
-    win_counter_str = read_csv_data('win_count.csv')
+    win_counter_str = read_csv_data('data storage/win_count.csv')
     win_counter_int = int(win_counter_str)
     win_counter_int += 1
 
-    with open('win_count.csv', 'w') as file:
+    with open('data storage/win_count.csv', 'w') as file:
         writer = csv.writer(file)
         writer.writerow([win_counter_int])
 
 
 def set_win_counter(value):
     """Sets the value of the win counter in the csv to the value passed in"""
-    with open('win_count.csv', 'w') as file:
+    with open('data storage/win_count.csv', 'w') as file:
         writer = csv.writer(file)
         writer.writerow([value])
 
 
 def initialise_images_and_win_counter():
     """Generates new images for both the cutest cat and challenger cat and also sets win count to 0."""
-    store_new_image_url('cutest_cat.csv')
-    store_new_image_url('challenger.csv')
+    store_new_image_url('data storage/cutest_cat.csv')
+    store_new_image_url('data storage/challenger.csv')
 
     set_win_counter(0) # set to 0 for new game
